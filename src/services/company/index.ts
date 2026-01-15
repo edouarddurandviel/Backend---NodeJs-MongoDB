@@ -34,7 +34,7 @@ class CompanyController {
     const companies = await companyActions.getAll();
 
     const client = await redisClient();
-    client.hSet("myKey:01", { text: "Hello" }); // encrypted content
+    client.hSet("myKey:01", { text: "Count" }); // encrypted content
     const getHelloResult = (await client.exists("myKey")) && (await client.get("myKey"));
     const mGetResult = await client.mGet(["myKey", "nonExistentKey"]);
     // ObjectId increment with a value
@@ -62,8 +62,8 @@ class CompanyController {
     await companyActions.createOne(company);
 
     const client = await redisClient();
-    client.set("myKey", "Hello");
-    client.hSet("myKey:01", { text: "Hello" });
+    client.set("myKey", "Counter");
+    client.hSet("myKey:01", { text: "Counter" });
     companySockets.reloadCompanies();
   }
 

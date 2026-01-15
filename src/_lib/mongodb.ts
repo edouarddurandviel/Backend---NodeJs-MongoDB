@@ -1,9 +1,9 @@
 import { MongoClient, Db, Collection } from "mongodb";
 import config from "../_config/mongoDb";
 
-//const uri = config.uri || "mongodb://localhost:27017";
+const uri = config.uri || "mongodb://localhost:27017";
 const dbName = config.db || "test";
-const uri = "mongodb://root:edouard@localhost:27017/test?authSource=admin";
+//const uri = "mongodb://root:edouard@localhost:27017/test?authSource=admin";
 
 let client: MongoClient;
 let db: Db;
