@@ -1,4 +1,3 @@
-// src/lib/mongodb.ts
 import { MongoClient, Db, Collection } from "mongodb";
 import config from "../_config/mongoDb";
 

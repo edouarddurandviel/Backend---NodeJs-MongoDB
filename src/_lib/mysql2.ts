@@ -1,8 +1,7 @@
-// src/lib/mongodb.ts
 import mysql, { ConnectionOptions } from "mysql2/promise";
-import config from "../_config/mongoDb";
-const uri = config.uri || "http//localhost:27017";
-const dbName = config.db || "test";
+// import config from "../_config/mongoDb";
+// const uri = config.uri || "http//localhost:27017";
+// const dbName = config.db || "test";
 
 let mysqlClient: any;
 let pool: any;
@@ -13,7 +12,7 @@ export const connectToDatabase = async () => {
   const access: ConnectionOptions = {
     host: "localhost",
     user: "root",
-    database: dbName
+    database: "test"
   };
 
   mysqlClient = await mysql.createConnection(access);
@@ -27,7 +26,7 @@ export const poolConnection = async () => {
   pool = await mysql.createPool({
     host: "localhost",
     user: "root",
-    database: dbName,
+    database: "test",
     waitForConnections: true,
     connectionLimit: 10,
     maxIdle: 10,
