@@ -1,0 +1,28 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis:latest
+    container_name: redis
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+
+  mongo:
+    image: mongo:latest
+    container_name: mongo
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=edouard
+      - MONGO_INITDB_DATABASE=test
+    volumes:
+      - mongo-data:/data/db
+      - ./data:/docker-entrypoint-initdb.d:ro
+
+volumes:
+  mongo-data:
+  redis_data:

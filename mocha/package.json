@@ -1,0 +1,33 @@
+{
+  "name": "mocha",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "mocha": "node ../node_modules/mocha/bin/mocha.js -r ts-node/register -r tsconfig-paths/register.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.27.7",
+    "@babel/preset-env": "^7.27.2",
+    "@babel/preset-typescript": "^7.27.1",
+    "@types/chai": "^5.2.2",
+    "@types/expect": "^24.3.2",
+    "@types/express": "^5.0.3",
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^24.0.8",
+    "chai": "npm:@esm-bundle/chai@^4.3.4-fix.0",
+    "esbuild": "^0.25.5",
+    "jest": "^30.0.5",
+    "mocha": "^11.7.1",
+    "nodemon": "^3.1.10",
+    "prettier": "^3.6.2",
+    "ts-node": "^10.9.2",
+    "tsconfig-paths": "^4.2.0",
+    "tslib": "^2.8.1",
+    "typescript": "^4.9.5",
+    "typescript-require": "^0.3.0"
+  }
+}
