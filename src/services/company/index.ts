@@ -92,7 +92,7 @@ class CompanyController {
   public async deleteOneCompany(companyId: string) {
     await companyActions.deleteOne(companyId);
 
-     companySockets.reloadCompanies();
+    companySockets.reloadCompanies();
   }
 
   public async getCompanyLogs() {

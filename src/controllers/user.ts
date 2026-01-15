@@ -86,8 +86,7 @@ export default (io: Server) => {
         keyFilename: config.buckets.google || "default"
       };
       const storage = new Storage(options);
-      const [buckets] = await storage.getBuckets()
-;
+      const [buckets] = await storage.getBuckets();
       res.status(200).json({ err: false, data: buckets });
     } catch (error: any) {
       handleErrors(error);
