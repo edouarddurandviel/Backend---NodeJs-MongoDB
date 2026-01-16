@@ -22,8 +22,7 @@
     "exactOptionalPropertyTypes": true,
     "noFallthroughCasesInSwitch": true
   },
-  "include": ["src", "src/_config"],
-  "exclude": ["node_modules", "dist", "src/test"],
+  "exclude": ["node_modules", "dist", "src/test", "mocha"],
   "watchOptions": {
     "watchFile": "useFsEvents",
     "watchDirectory": "useFsEvents",

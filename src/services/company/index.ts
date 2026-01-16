@@ -32,7 +32,6 @@ class CompanyController {
 
   public async getCompanies() {
     const companies = await companyActions.getAll();
-
     const client = await redisClient();
     client.hSet("myKey:01", { text: "Count" }); // encrypted content
     const getHelloResult = (await client.exists("myKey")) && (await client.get("myKey"));

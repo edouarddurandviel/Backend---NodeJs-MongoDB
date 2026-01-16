@@ -1,4 +1,4 @@
-## Backend---NodeJs-MongoDB 
+## Backend---NodeJs-MongoDB
 
 Frontend dépôt git "React.js"
 Backend node.js express.js connecté à une base de données NoSQL, MongoDB
@@ -13,10 +13,11 @@ docker compose up -d
 
 ### Node
 
-Préparer et lancer la version de dévelopement
+Préparer et lancer la version github
 
 ```bash
 pnpm install
 
-pnpm run dev
+# lancer la version github
+pnpm run github
 ```

@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "dev": "nodemon -L --exec \"ts-node -r tsconfig-paths/register src/index.ts\"",
+    "dev": "nodemon --watch src --exec \"ts-node -r tsconfig-paths/register src/index.ts\"",
+    "github": "set NODE_ENV=github && nodemon -L --exec \"ts-node -r tsconfig-paths/register src/index.ts\"",
     "dev:types": "concurrently \"nodemon -L --exec ts-node -r tsconfig-paths/register src/index.ts\" \"tsc -w\"",
     "build": "tsc --build --clean && tsc --build",
     "start": "node -r esm dist/index.js",

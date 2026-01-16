@@ -1,16 +1,18 @@
 import { MongoClient, Db, Collection } from "mongodb";
-import config from "../_config/mongoDb";
+import config from "../_config/mongodb";
 
-const uri = config.uri || "mongodb://localhost:27017";
 const dbName = config.db || "test";
-//const uri = "mongodb://root:edouard@localhost:27017/test?authSource=admin";
+const uri =
+  config.env && config.env.toString().trim() === "github"
+    ? "mongodb://root:edouard@localhost:27018/test?authSource=admin"
+    : (config.uri || "mongodb://localhost:27017");
+
 
 let client: MongoClient;
 let db: Db;
 
 export const connectToDatabase = async () => {
   if (db) return;
-
   client = new MongoClient(uri);
   await client.connect();
   db = client.db(dbName);
