@@ -32,27 +32,27 @@ class CompanyController {
 
   public async getCompanies() {
     const companies = await companyActions.getAll();
-    const client = await redisClient();
-    client.hSet("myKey:01", { text: "Count" }); // encrypted content
-    const getHelloResult = (await client.exists("myKey")) && (await client.get("myKey"));
-    const mGetResult = await client.mGet(["myKey", "nonExistentKey"]);
-    // ObjectId increment with a value
-    const incrResult = await client.incr("myKeyCount");
+    // const client = await redisClient();
+    // client.hSet("myKey:01", { text: "Count" }); // encrypted content
+    // const getHelloResult = (await client.exists("myKey")) && (await client.get("myKey"));
+    // const mGetResult = await client.mGet(["myKey", "nonExistentKey"]);
+    // // ObjectId increment with a value
+    // const incrResult = await client.incr("myKeyCount");
 
-    console.log(mGetResult); // ["Hello", null]
-    console.log(incrResult);
+    // console.log(mGetResult); // ["Hello", null]
+    // console.log(incrResult);
 
-    const scanOptions = {
-      TYPE: "string", // type of data
-      MATCH: "my*", // any item stating with my prefix.
-      COUNT: 2 // number of items.
-    };
-    const cursor: RedisArgument = "0"; // items position in tree
+    // const scanOptions = {
+    //   TYPE: "string", // type of data
+    //   MATCH: "my*", // any item stating with my prefix.
+    //   COUNT: 2 // number of items.
+    // };
+    // const cursor: RedisArgument = "0"; // items position in tree
 
-    const scanResult = await client.scan(cursor, scanOptions);
-    const keys = scanResult.keys;
+    // const scanResult = await client.scan(cursor, scanOptions);
+    // const keys = scanResult.keys;
 
-    const hget = await client.hGet("myKey:01", "text");
+    // const hget = await client.hGet("myKey:01", "text");
 
     return companies;
   }

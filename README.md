@@ -21,3 +21,12 @@ pnpm install
 # lancer la version github
 pnpm run github
 ```
+
+## RestAPI
+
+homepage: http://localhost:5173/
+
+```bash
+
+
+```
