@@ -1,12 +1,12 @@
 import { MongoClient, Db, Collection } from "mongodb";
 import config from "../_config/mongodb";
+import { isEnv } from "../_config/isEnv";
 
 const dbName = config.db || "test";
-const uri =
-  config.env && config.env.toString().trim() === "github"
-    ? "mongodb://root:edouard@localhost:27018/test?authSource=admin"
-    : (config.uri || "mongodb://localhost:27017");
 
+const uri = isEnv("github")
+  ? "mongodb://root:edouard@localhost:27017/test?authSource=admin"
+  : config.uri || "mongodb://localhost:27017";
 
 let client: MongoClient;
 let db: Db;
